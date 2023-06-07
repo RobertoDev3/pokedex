@@ -1,0 +1,479 @@
+:root {
+    --color-normal: #A8A878;
+    --color-fire: #F08030;
+    --color-water: #6890F0;
+    --color-grass: #78C850;
+    --color-eletric: #F8D030;
+    --color-ice: #98D8D8;
+    --color-fighting: #C03028;
+    --color-poison: #A040A0;
+    --color-ground: #E0C068;
+    --color-flying: #A890F0;
+    --color-psychic: #F85888;
+    --color-bug: #A8B820;
+    --color-rock: #B8A038;
+    --color-ghost: #705898;
+    --color-dark: #705848;
+    --color-dragon: #7038F8;
+    --color-steel: #B8B8D0;
+    --color-fairy: #F0B6BC;
+    --dark-blue: #0e3c59;
+    --white-default: #f6e7e7;
+}
+
+
+@font-face {
+    font-family: 'pkmn';
+    src: url('fonts/PKMN.ttf');
+}
+
+body {
+    font-family: 'pkmn', Arial, Helvetica, sans-serif;
+    background-image: url(img/Fundo\ 2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+.pc-box::-webkit-scrollbar,
+.body-modal::-webkit-scrollbar {
+    width: 10px;
+}
+
+.pc-box::-webkit-scrollbar-track,
+.body-modal::-webkit-scrollbar-track {
+    background: var(--white-default);
+    border-radius: 10px;
+}
+
+.pc-box::-webkit-scrollbar-thumb,
+.body-modal::-webkit-scrollbar-thumb {
+    background-color: var(--dark-blue);
+    border-radius: 10px;
+}
+
+main {
+    height: 100vh;
+}
+
+input:focus {
+    outline: 0;
+}
+
+.box-name span {
+    padding-top: 3px;
+    font-size: 11px;
+    color: var(--dark-blue);
+    margin: 9px 15px 0px 15px;
+}
+
+.box-name {
+    width: 300px;
+    height: 50px;
+}
+
+.box-img {
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+}
+
+.box-img img {
+    transform: scale(2.5);
+}
+
+.box-type {
+    width: 300px;
+    height: 200px;
+}
+
+.inner-box-type {
+    border: 3px solid rgb(14, 60, 89, 0.2);
+    background-color: var(--white-default);
+    border-radius: 8px;
+    width: 95%;
+    height: 50px;
+    text-transform: uppercase;
+    color: rgb(14, 60, 89);
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+.inner-box {
+    border: 3px solid rgb(14, 60, 89, 0.2);
+    background-color: var(--white-default);
+    border-radius: 8px;
+    width: 95%;
+    height: 50px;
+    text-transform: uppercase;
+    color: rgb(14, 60, 89);
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.5s;
+}
+
+.inner-box:hover {
+    background-color: rgb(14, 60, 89, 0.2);
+    border: none;
+    transition: all 0.1s;
+}
+
+.inner-box:active {
+    background-color: var(--white-default);
+    color: var(--white-default);
+    text-shadow: none;
+    border: none;
+}
+
+.arrow-button {
+    width: 70px;
+    height: 50px;
+    border: 4px solid var(--dark-blue);
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(246, 231, 231, 1) 47%, rgba(195, 177, 177, 1) 59%);
+}
+
+.arrow-button:hover {
+    background: linear-gradient(180deg, rgba(199, 184, 184, 1) 47%, rgba(133, 116, 116, 1) 59%);
+}
+
+.arrow-button:active {
+    background: linear-gradient(180deg, rgba(246, 231, 231, 1) 47%, rgba(195, 177, 177, 1) 59%);
+}
+
+.input-area {
+    height: 50px;
+    width: 77%;
+    border: 4px solid var(--dark-blue);
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: var(--dark-blue);
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+.input-area::placeholder {
+    color: rgb(14, 60, 89, 0.3);
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.button-search {
+    background-color: var(--dark-blue);
+    border-radius: 10px;
+    border: 4px solid var(--dark-blue);
+    border-left: 0px;
+}
+
+.button-search:hover {
+    background-color: var(--dark-blue);
+}
+
+.button-search:active {
+    transition: all 0.1s;
+}
+
+.icon-search {
+    font-size: 30px;
+    color: var(--white-default);
+}
+
+.arrow {
+    width: 20px;
+    color: var(--dark-blue);
+}
+
+.margin-adjust-input {
+    margin-left: 20px;
+}
+
+.margin-adjust {
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.box-default {
+    background-color: var(--white-default);
+    border: 4px solid var(--dark-blue);
+    box-shadow: 0px 0px 0px 2px var(--white-default), inset 0px 0px 3px 2px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.3);
+    text-transform: capitalize;
+}
+
+.pc-box {
+    max-width: 800px;
+    min-width: 400px;
+    max-height: 510px;
+    background-image: url(img/Grama.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 4px solid var(--dark-blue);
+    box-shadow: inset 0px 0px 3px 2px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+    margin-left: 10px;
+    overflow-y: auto;
+    padding: 20px 30px;
+}
+
+.pokecard {
+    width: 80px;
+    height: 90px;
+    margin: 15px 7px 7px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: column;
+    position: relative;
+    background: none;
+    border: none;
+}
+
+.floor {
+    width: 90px;
+    opacity: 0.15;
+    position: absolute;
+    transform: rotateX(75deg);
+    top: 35px;
+    transition: transform 0.5s, top 0.5s;
+}
+
+.pokecard:focus .floor {
+    transform: scale(1.2);
+    top: 0px;
+}
+
+.pokemon {
+    top: -5px;
+    position: relative;
+    z-index: 1;
+    transition: top 0.5s;
+    animation: opacity 2s;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.pokemon-fallign {
+    animation: falling-pc-box 1.2s;
+}
+
+@keyframes falling-pc-box {
+    0% {
+        top: 0px;
+    }
+
+    100% {
+        top: 600px;
+    }
+}
+
+#pkmn_img {
+    position: relative;
+}
+
+.pkmn_animation {
+    animation: falling-pkmn-img 0.5s;
+}
+
+@keyframes falling-pkmn-img {
+    0% {
+        top: -300px;
+    }
+
+    60% {
+        top: 0px;
+    }
+
+
+    80% {
+        top: -20px;
+    }
+
+
+    100% {
+        top: 0px;
+    }
+}
+
+.pkmn_animation_delay {
+    animation: falling-pkmn-img_delay 1s;
+}
+
+@keyframes falling-pkmn-img_delay {
+    0% {
+        top: -2000px;
+    }
+
+    70% {
+        top: 0px;
+    }
+
+
+    80% {
+        top: -25px;
+    }
+
+
+    100% {
+        top: 0px;
+    }
+}
+
+/* Modal */
+
+.default-modal {
+    position: absolute;
+    top: 205px;
+    width: 800px;
+    height: 570px;
+    background-color: var(--white-default);
+    border: 4px solid var(--dark-blue);
+    box-shadow: inset 0px 0px 3px 2px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+    margin-left: 10px;
+    z-index: 10;
+    transform: scale(0);
+    transition: transform 0.3s;
+}
+
+.active {
+    transform: scale(1);
+}
+
+.header-modal {
+    padding-left: 20px;
+    color: var(--white-default);
+    height: 70px;
+    background-color: #0e3c59;
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.23);
+    border-radius: 4px 4px 10px 10px;
+}
+
+.header-modal button {
+    margin-bottom: 10px;
+    color: var(--white-default);
+    font-size: 30px;
+    border: none;
+}
+
+.header-modal button:hover {
+    opacity: 0.5;
+}
+
+.header-modal button:active {
+    opacity: 1;
+}
+
+.body-modal {
+    border-radius: 5px;
+    margin: 10px;
+    height: 410px;
+    overflow-y: auto;
+}
+
+@media (max-width:1199px) {
+    .default-modal {
+        width: 640px;
+    }
+
+}
+
+@media (max-width:991px) {
+    .default-modal {
+        width: 400px;
+    }
+
+}
+
+/* Tipos pokemon */
+
+.t-type {
+    position: relative;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 12px;
+    color: var(--white-default);
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.3);
+    min-width: 100px;
+    top: -1px;
+    box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+.type-normal {
+    background-color: var(--color-normal);
+}
+
+.type-fire {
+    background-color: var(--color-fire);
+}
+
+.type-water {
+    background-color: var(--color-water);
+}
+
+.type-grass {
+    background-color: var(--color-grass);
+}
+
+.type-electric {
+    background-color: var(--color-eletric);
+}
+
+.type-ice {
+    background-color: var(--color-ice);
+}
+
+.type-fighting {
+    background-color: var(--color-fighting);
+}
+
+.type-poison {
+    background-color: var(--color-poison);
+}
+
+.type-ground {
+    background-color: var(--color-ground);
+}
+
+.type-flying {
+    background-color: var(--color-flying);
+}
+
+.type-psychic {
+    background-color: var(--color-psychic);
+}
+
+.type-bug {
+    background-color: var(--color-bug);
+}
+
+.type-rock {
+    background-color: var(--color-rock);
+}
+
+.type-ghost {
+    background-color: var(--color-ghost);
+}
+
+.type-dark {
+    background-color: var(--color-dark);
+}
+
+.type-dragon {
+    background-color: var(--color-dragon);
+}
+
+.type-steel {
+    background-color: var(--color-steel);
+}
+
+.type-fairy {
+    background-color: var(--color-fairy);
+}
