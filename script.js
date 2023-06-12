@@ -12,7 +12,7 @@ const buttonNext = document.getElementById('btn_next');
 const pcBox = document.querySelector('.pc-box');
 const typeBox = document.getElementById('type-box');
 
-const pokeCount = 649;
+const pokeCount = 493;
 
 window.onload = async () => {
     createPokemonCount()
@@ -112,7 +112,7 @@ const renderPokemonInDisplay = async (pokemonId) => {
 
     const pokemonData = await fetchPokemon(pokemonId);
 
-    if (!pokemonData || pokemonData.id >= 650) {
+    if (!pokemonData || pokemonData.id >= 494) {
         notFoundDisplayPokemon();
         return
     };
@@ -238,7 +238,7 @@ const renderPokemonInDisplay = async (pokemonId) => {
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    if (input.value == '' || input.value >= 650) {
+    if (input.value == '' || input.value >= 494) {
         notFoundDisplayPokemon();
         return
     }
@@ -256,7 +256,7 @@ function prevPokemon() {
 };
 
 function nextPokemon() {
-    if (searchPokemon < 649) {
+    if (searchPokemon < 493) {
         searchPokemon += 1;
         pokemonImage.classList.add('pkmn_animation')
         renderPokemonInDisplay(searchPokemon);
