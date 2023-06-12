@@ -1,6 +1,7 @@
 const pokemonName = document.getElementById('pkmn_name');
 const pokemonNumber = document.getElementById('pkmn_number');
 const pokemonImage = document.getElementById('pkmn_img');
+const statNumber = document.getElementById('stat-number');
 
 const form = document.getElementById('form');
 const input = document.getElementById('input_search');
@@ -31,6 +32,12 @@ const fetchPokemon = async (pokemonIdOrName) => {
         const data = await APIResponse.json();
         return data;
     }
+}
+
+const fetchSpecies = async (url) => {
+    const APIResponse = await fetch(url);
+    const response = await APIResponse.json();
+    return response
 }
 
 const setPokemonType = (pokemon) => {
@@ -121,33 +128,102 @@ const renderPokemonInDisplay = async (pokemonId) => {
     const modal = document.getElementById('default-modal')
     const openModal = async (button) => {
 
+        const pokemonDisplay = await fetchPokemon(searchPokemon);
+
+        const species = await fetchSpecies(pokemonDisplay.species.url);
+        const specieDescription = species.flavor_text_entries[7].flavor_text.replaceAll('\f', '</br>');
         const action = button.target.id;
 
         if (action == 'about-button') {
             const contentInnerHTML = `
-        <div class="header-modal d-flex align-items-center justify-content-between">
-        <h2>About</h2>
-        <button id="modalClose" class="btn">x</button>
-        </div>
-        <div class="body-modal">
-        <div>
-        <p>Height: ${pokemonData.height}ft</p>
-        <p>Weight: ${pokemonData.weight}lbs</p>
-        </div>
-        </div>
-        `
+                <div class="header-modal d-flex align-items-center justify-content-between">
+                    <h2>About</h2>
+                    <button id="modalClose" class="btn">x</button>
+                </div>
+                <div class="body-modal">
+                    <div class="d-flex flex-column justify-content-around h-100">
+                        <p>${specieDescription}</p>
+                        <div class="d-flex justify-content-evenly align-items-center border border-dark rounded-pill">
+                            <p class="mt-3">Height: ${pokemonDisplay.height}ft</p>
+                            <p class="mt-3">Weight: ${pokemonDisplay.weight}lbs</p>
+                        </div>
+                    </div>
+                </div>
+            `
             modal.innerHTML = contentInnerHTML
             modal.classList.add('active')
         } else {
             const contentInnerHTML = `
-        <div class="header-modal d-flex align-items-center justify-content-between">
-        <h2>Stats Base</h2>
-        <button id="modalClose" class="btn">x</button>
-        </div>
-        <div class="body-modal">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur erat diam, viverra eget tortor sed, dictum interdum lorem.</p>
-        </div>
-        `
+                <div class="header-modal d-flex align-items-center justify-content-between">
+                    <h2>Stats Base</h2>
+                    <button id="modalClose" class="btn">x</button>
+                </div>
+                <div class="body-modal">
+                    <div class="d-flex flex-column align-items-center justify-content-around h-100">
+                        
+                    <div class="d-flex w-100 justify-content-end align-items-center">
+                            <div class="stat-desc">HP: </div>
+                            <div id="stat-number" class="ps-3">${pokemonDisplay.stats['0']['base_stat']}</div>
+                            <div class="stat-bar">
+                                <div class="bar-outer">
+                                    <div class="bar-inner" style="width: ${pokemonDisplay.stats['0']['base_stat']}%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex w-100 justify-content-end align-items-center">
+                            <div class="stat-desc">Attack: </div>
+                            <div class="ps-3">${pokemonDisplay.stats['1']['base_stat']}</div>
+                            <div class="stat-bar">
+                                <div class="bar-outer">
+                                    <div class="bar-inner" style="width: ${pokemonDisplay.stats['1']['base_stat']}%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex w-100 justify-content-end align-items-center">
+                            <div class="stat-desc">Defense: </div>
+                            <div class="ps-3">${pokemonDisplay.stats['2']['base_stat']}</div>
+                            <div class="stat-bar">
+                                <div class="bar-outer">
+                                    <div class="bar-inner" style="width: ${pokemonDisplay.stats['2']['base_stat']}%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex w-100 justify-content-end align-items-center">
+                            <div class="stat-desc">Special Attack: </div>
+                            <div class="ps-3">${pokemonDisplay.stats['3']['base_stat']}</div>
+                            <div class="stat-bar">
+                                <div class="bar-outer">
+                                    <div class="bar-inner" style="width: ${pokemonDisplay.stats['3']['base_stat']}%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex w-100 justify-content-end align-items-center">
+                            <div class="stat-desc">Special Defense: </div>
+                            <div class="ps-3">${pokemonDisplay.stats['4']['base_stat']}</div>
+                            <div class="stat-bar">
+                                <div class="bar-outer">
+                                    <div class="bar-inner" style="width: ${pokemonDisplay.stats['4']['base_stat']}%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex w-100 justify-content-end align-items-center">
+                            <div class="stat-desc">Speed: </div>
+                            <div class="ps-3">${pokemonDisplay.stats['5']['base_stat']}</div>
+                            <div class="stat-bar">
+                                <div class="bar-outer">
+                                    <div class="bar-inner" style="width: ${pokemonDisplay.stats['5']['base_stat']}%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            `
             modal.innerHTML = contentInnerHTML
             modal.classList.add('active')
         }
