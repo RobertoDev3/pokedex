@@ -403,6 +403,29 @@ input:focus {
 
 }
 
+@media (max-width:749px) {
+
+    .mobile{
+        display: none !important;
+    }
+
+    .mobile-bg {
+        display: flex !important;
+        justify-content: center;
+        height: 100vh;
+        margin: auto 0;
+    }
+
+}
+
+.mobile-bg {
+    display: none;
+}
+
+.mobile-bg img {
+    width: 50%;
+}
+
 /* Stats Base */
 .stat-desc {
     text-align: end;
