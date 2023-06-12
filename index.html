@@ -43,30 +43,30 @@
             </div>
         </aside>
         <section>
-            <div class="d-flex justify-content-center align-items-center margin-adjust">
-                <div>
-                    <button id="btn_prev" onclick="prevPokemon()" class="arrow-button d-none d-lg-block">
-                        <img class="arrow" src="img/arrow-left.svg" alt="Button Previous">
-                    </button>
-                </div>
-                <div>
-                    <form class="input-group margin-adjust-input" id="form">
-                        <input id="input_search" type="search" placeholder="Name or Number" class="input-area text-center" required>
-                        <button class="btn button-search d-flex align-items-center justify-content-center">
-                            <iconify-icon class="icon-search" icon="material-symbols:search"></iconify-icon>
+            <div class="position">
+                <div class="d-flex justify-content-center align-items-center margin-adjust">
+                    <div>
+                        <button id="btn_prev" onclick="prevPokemon()" class="arrow-button d-none d-lg-block">
+                            <img class="arrow" src="img/arrow-left.svg" alt="Button Previous">
                         </button>
-                    </form>
+                    </div>
+                    <div>
+                        <form class="input-group margin-adjust-input" id="form">
+                            <input id="input_search" type="search" placeholder="Name or Number" class="input-area text-center" required>
+                            <button class="btn button-search d-flex align-items-center justify-content-center">
+                                <iconify-icon class="icon-search" icon="material-symbols:search"></iconify-icon>
+                            </button>
+                        </form>
+                    </div>
+                    <div>
+                        <button id="btn_next" onclick="nextPokemon()" class="arrow-button d-none d-lg-block">
+                            <img class="arrow" src="img/arrow-right.svg" alt="">
+                        </button>
+                    </div>
                 </div>
-                <div>
-                    <button id="btn_next" onclick="nextPokemon()" class="arrow-button d-none d-lg-block">
-                        <img class="arrow" src="img/arrow-right.svg" alt="">
-                    </button>
-                </div>
+                <div class="pc-box row"></div>
             </div>
-            <div class="pc-box row">
-            </div>
-            <div class="default-modal" id="default-modal">
-            </div>
+            <div class="default-modal" id="default-modal"></div>
         </section>
 
     </main>

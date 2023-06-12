@@ -163,7 +163,7 @@ const renderPokemonInDisplay = async (pokemonId) => {
                         
                     <div class="d-flex w-100 justify-content-end align-items-center">
                             <div class="stat-desc">HP: </div>
-                            <div id="stat-number" class="ps-3">${pokemonDisplay.stats['0']['base_stat']}</div>
+                            <div class="ps-3 stat-number">${pokemonDisplay.stats['0']['base_stat']}</div>
                             <div class="stat-bar">
                                 <div class="bar-outer">
                                     <div class="bar-inner" style="width: ${pokemonDisplay.stats['0']['base_stat']}%"></div>
@@ -172,8 +172,8 @@ const renderPokemonInDisplay = async (pokemonId) => {
                         </div>
 
                         <div class="d-flex w-100 justify-content-end align-items-center">
-                            <div class="stat-desc">Attack: </div>
-                            <div class="ps-3">${pokemonDisplay.stats['1']['base_stat']}</div>
+                            <div class="stat-desc">ATK: </div>
+                            <div class="ps-3 stat-number">${pokemonDisplay.stats['1']['base_stat']}</div>
                             <div class="stat-bar">
                                 <div class="bar-outer">
                                     <div class="bar-inner" style="width: ${pokemonDisplay.stats['1']['base_stat']}%"></div>
@@ -182,8 +182,8 @@ const renderPokemonInDisplay = async (pokemonId) => {
                         </div>
 
                         <div class="d-flex w-100 justify-content-end align-items-center">
-                            <div class="stat-desc">Defense: </div>
-                            <div class="ps-3">${pokemonDisplay.stats['2']['base_stat']}</div>
+                            <div class="stat-desc">DEF: </div>
+                            <div class="ps-3 stat-number">${pokemonDisplay.stats['2']['base_stat']}</div>
                             <div class="stat-bar">
                                 <div class="bar-outer">
                                     <div class="bar-inner" style="width: ${pokemonDisplay.stats['2']['base_stat']}%"></div>
@@ -192,8 +192,8 @@ const renderPokemonInDisplay = async (pokemonId) => {
                         </div>
 
                         <div class="d-flex w-100 justify-content-end align-items-center">
-                            <div class="stat-desc">Special Attack: </div>
-                            <div class="ps-3">${pokemonDisplay.stats['3']['base_stat']}</div>
+                            <div class="stat-desc">SATK: </div>
+                            <div class="ps-3 stat-number">${pokemonDisplay.stats['3']['base_stat']}</div>
                             <div class="stat-bar">
                                 <div class="bar-outer">
                                     <div class="bar-inner" style="width: ${pokemonDisplay.stats['3']['base_stat']}%"></div>
@@ -202,8 +202,8 @@ const renderPokemonInDisplay = async (pokemonId) => {
                         </div>
 
                         <div class="d-flex w-100 justify-content-end align-items-center">
-                            <div class="stat-desc">Special Defense: </div>
-                            <div class="ps-3">${pokemonDisplay.stats['4']['base_stat']}</div>
+                            <div class="stat-desc">SDEF: </div>
+                            <div class="ps-3 stat-number">${pokemonDisplay.stats['4']['base_stat']}</div>
                             <div class="stat-bar">
                                 <div class="bar-outer">
                                     <div class="bar-inner" style="width: ${pokemonDisplay.stats['4']['base_stat']}%"></div>
@@ -212,8 +212,8 @@ const renderPokemonInDisplay = async (pokemonId) => {
                         </div>
 
                         <div class="d-flex w-100 justify-content-end align-items-center">
-                            <div class="stat-desc">Speed: </div>
-                            <div class="ps-3">${pokemonDisplay.stats['5']['base_stat']}</div>
+                            <div class="stat-desc">SPD: </div>
+                            <div class="ps-3 stat-number">${pokemonDisplay.stats['5']['base_stat']}</div>
                             <div class="stat-bar">
                                 <div class="bar-outer">
                                     <div class="bar-inner" style="width: ${pokemonDisplay.stats['5']['base_stat']}%"></div>
