@@ -7,6 +7,6 @@ O projeto foi realizado com base em aprimorar meus conhecimentos de javascript e
 <img src="img/layout.JPG" />
 
 ## *Tecnologias*
-> Html / Css / JavaScript / Boostrap
+> Html / Css / JavaScript / Bootstrap
 
 [⭐ Acesse a pagina clicando aqui ⭐](https://robertodev3.github.io/pokedex)
