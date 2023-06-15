@@ -266,6 +266,7 @@ input:focus {
 
 
 .pokemon-fallign {
+    z-index: 999;
     animation: falling-pc-box 1.2s;
 }
 
